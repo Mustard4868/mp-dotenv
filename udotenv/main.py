@@ -16,9 +16,12 @@ class Dotenv:
                 key, value = line.strip().replace(' ', '').split('=')
                 self.envs[key] = value
 
+    def dict(self) -> dict:
+        return self.envs
+
     def get_env(self, key: str) -> str:
         return self.envs[key]
+    
+
         
 env = Dotenv()
-env.load_dotenv()
-print(env.envs)
